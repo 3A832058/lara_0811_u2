@@ -14,11 +14,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 //設定 Route 回傳 view
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 //設定 Route 回傳字串
+/*
 Route::get('/', function() {
     return 'welcome';
+});
+*/
+
+//設定 Route 跳轉路由
+Route::get('r1', function(){
+    return redirect('r2');
+});
+
+Route::get('r2', function(){
+    return view('welcome');
 });
